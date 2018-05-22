@@ -1,4 +1,5 @@
-Cheng (2002)   
+Cheng (2002) argued that not only class but also nationality influences labor law and related policies in Taiwan. In 2000, the Democratic Progressive Party took the government and its pro-independence ideology came into play to the management of foreign labors. Only immigrants with Chinese bloodship are treated as Taiwan nationals but Chinese immigrants are considered as foreign labor by labor law.   
+
 Tseng (2006) argued that Taiwan government intentionally classify "non-economic" immigrants from southeast Asia and China and "economic" immigrants from other countries. The "non-economic" immigrants who marry local Taiwanese are mostly in lower social class but the "economic" immigrants are better off.      
    
 
