@@ -3,4 +3,8 @@ In recent years, transformation of demographic and economic structure resulted i
 In October 1989, the Council of Labor Affairs (MOL) decided to open up Taiwan’s job market to foreign workers to respond to these issues. Migrant workers from Thailand, Philippines, Indonesia, Malaysia, Vietnam, China and Mongolia are now 
 allowed to work in Taiwan as part of solution of labor shortages. According to MOL, As of the end of December 2017, there were 676,142 foreign workers in Taiwan. Among them, 60.43% employed as manufacturing workers, 0.76% as construction workers, 1.82% on fishing crews, 36.71% as caretakers and 0.29% as domestic helpers. [Footnote](https://www.wda.gov.tw/cp.aspx?n=1C6028CA080A27B3) They can work as long as 12 years.  
 
-Although migrant workers may attenuate the problem of labor supply as the birth rate is getting lower, brain drain becomes a serious problem for the economy that needs to be re-configured. 
+Although migrant workers may attenuate the problem of labor supply as the birth rate is getting lower, brain drain becomes a serious problem for the economy that needs to be re-configured. In 2015, it is estimated that 724,000 people worked overseas, which is about 10% higher than 2009  [footnote]   (https://www.ndc.gov.tw/Content_List.aspx?n=E61E31EE6FB10140&upn=0A078649EEC83462). Stagnant salary is often cited as the major reason of emigration. Lin, Chang, and Lu (2017) pointed out that the the gross domestic product per capita (GDP) is negatively correlated with real wage in Taiwan; labors have limited share of economic growth.
+
+## Reference
+Lin, Chang-ching, Juin-jen Chang, and Shu-shiuan Lu, 2017. "Wage Stagnation? Fact Disclosure and Cross-Country Comparison" Journal of Social Sciences and Philosophy, Volume 29, Number 1, pp. 1–39.    
+
