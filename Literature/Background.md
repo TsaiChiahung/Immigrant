@@ -9,7 +9,7 @@ Although migrant workers may attenuate the problem of labor supply as the birth 
 
 ## Management
 The abuse or mistreat of migrant workers is often made local headlines. They include lack of freedom to change employer, live-in situations with employers, and high broker fees in mother countries [(Jeremy Oliver, 2017)](https://sentinel.tw/improving-migrant-workers-taiwan/). In 2016, the government amended the Empolyment Serivce Act to improve the structures. After being hired, migrant workers do not have to leave the country every three years, which reduces the broker fees for re-entering the country. The employers also cannot refuse to give them paid leave as it is required by Labor Standards Act, a statue that mainly regulates domestic labor and employer.      
-Like other countries, migrant workers replace vanishing Taiwanese workers. 
+Like other countries, people are concerned that migrant workers replace vanishing Taiwanese workers. Lan (2009) found that employers of migrant workers tend to agree that migrant work forces can supplement local workers but employers of local workers tend to think that local workers are replaced by migrant labors.
 ## Reference
 Lin, Chang-ching, Juin-jen Chang, and Shu-shiuan Lu, 2017. "Wage Stagnation? Fact Disclosure and Cross-Country Comparison" Journal of Social Sciences and Philosophy, Volume 29, Number 1, pp. 1–39.    
 
