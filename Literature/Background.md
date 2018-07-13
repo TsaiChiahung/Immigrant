@@ -1,5 +1,5 @@
 ## Background
-The immigration issue has been 
+In Taiwan, there are three groups of immigrants: migrant workers, marital migrants, and white collar foreign professionals. They are partially overlapped; marital migrants are allowed to work as professionals or labors. Migrant workers can apply for citizenship if they marry to Taiwanese. In the future, migrant workers as caretakes can apply for residence permit after working for seven years in a row [Footnote](The Executive Yuan approved New Economic Immigration Law on May 15, 2018. This new regulation encourages foreign professionals, investors, and caretakers to apply for citizenship.). 
 
 In recent years, transformation of demographic and economic structure resulted in the unbalanced labor supply and demand in Taiwan. On the one hand, the birth rate has dropped from 2.297% in 1981 to 0.823% in 2017. The number of population increased by 327,947 people in 1981, but it only increased by 31,411 in 2017. On the other hand, the economic structure gradually changed from agriculture to production and service industries. The number of pople who worked in production and service industries increased from 2.3 million in 1971 to 8 millon in 2011. The population transition creates demand on labors, while the economic development requires more investment and educated, professional workers.   
 
