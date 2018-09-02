@@ -1,0 +1,482 @@
+\documentclass[12pt]{beamer}
+\usepackage{amsmath, amsfonts, epsfig, xspace, relsize}
+\usepackage{algorithm,algorithmic, graphicx}
+\usepackage{xcolor, IEEEtrantools}
+ \newcommand{\non}{\nonumber}
+ \usepackage{multirow}
+\usepackage{pstricks,pst-node}
+\usepackage[font=small,labelfont=bf,tableposition=top]{caption}
+\setbeamertemplate{caption}[numbered]
+\usepackage[normal,tight,center]{subfigure}
+\setlength{\subfigcapskip}{-.1em}
+\usepackage{beamerthemesplit}
+\usepackage{xcolor}
+\usepackage{booktabs, dcolumn}
+%Tsung-han's setting
+\usepackage{epsf,graphicx,psfrag}
+%\usepackage{lscape}
+\usepackage{natbib}
+%\usepackage{fullpage}
+\usepackage{setspace}
+\usepackage[top=0.5in, bottom=1in, right=1in, left=1in]{geometry}
+%\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cases}
+\usepackage{empheq}
+\usepackage{dcolumn}
+\usepackage{color}
+\usepackage{scalefnt}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{grffile}
+\usepackage{bm}
+\usepackage{subfig}
+%\usepackage[hidelinks]{hyperref}    % Link to reference and footnote
+%\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{hhline}
+\usepackage{caption, fixltx2e} % Add notes under table
+\usepackage[flushleft]{threeparttable} % Add notes under table
+
+\def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
+
+\newcommand{\bpm}{\begin{pmatrix}}
+\newcommand{\epm}{\end{pmatrix}}
+\newcommand{\bfa}{{\bf A }}
+\newcommand{\bfx}{{\bf X }}
+%s\renewcommand{\baselinestretch}{2}
+
+\newcommand{\bbm}{\begin{bmatrix}}
+\newcommand{\ebm}{\end{bmatrix}}
+
+\newcommand{\minitab}[2][l]{\begin{tabular}{#1}#2\end{tabular}}
+% setting of frame
+\usetheme{CambridgeUS}%\usecolortheme{beaver}
+\usepackage[absolute,overlay]{textpos}
+\newenvironment{reference}[2]{%
+  \begin{textblock*}{\textwidth}(#1,#2)
+      \footnotesize\sf\bgroup\color{blue!50!green}}{\egroup    	\end{textblock*}
+      }
+\useoutertheme{infolines}
+\setbeamertemplate{footline}{
+\leavevmode%
+\hbox{%
+\begin{beamercolorbox}[wd=.22\paperwidth,ht=2.25ex,dp=1ex, center]{author in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshortauthor
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.56\paperwidth,ht=2.25ex, dp=1ex, left]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.2\paperwidth, ht=2.25ex,dp=1ex, right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{1.5em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{1.5ex} 
+\end{beamercolorbox}}%
+\vskip0pt%
+}
+\makeatother
+%\setbeamerfont{author in head/foot}{size={\fontsize{3pt}{4pt}\selectfont}}
+% Single author
+%\author[CHT]{Chia-hung Tsai\\
+%\vspace{.5em}
+%            Election Study Center and Graduate Institute of East Asian Studies, \\
+ %           National Chengchi University
+  %          }
+%Multiple authors
+\author[THT, CHT, CH (NCCU)]{Tsung-han Tsai \textsuperscript {1, 2, 3}, Chia-hung Tsai \textsuperscript{2, 3, 4}, Chi Huang \textsuperscript{1,2, 3}}
+\institute[]{\textsuperscript{1}Department of Political Science\\ %
+\textsuperscript{2}Election Study Center \\ %
+\textsuperscript{3}Taiwan Institute for Governance and Communication Research\\
+\textsuperscript{4}Graduate Institute of East Asian Studies }
+\title[Bayesian Bivariate Ordered Probit Analysis of Public Opinion in Taiwan]{Different Immigrants, Same Attitudes? \\ A Bayesian Bivariate Ordered Probit Analysis of \\ Public Opinion in Taiwan}
+\date[9/2/2018]{September 2, 2018} %leave out for today's date to be insterted
+
+\begin{document}
+\begin{frame}
+\titlepage
+\begin{reference}{4mm}{82mm}
+Presented at the Annual Meeting of the American Political Science Association in Boston, MA, USA, August 30-September 2, 2018.
+   \end{reference} 
+\end{frame}
+\section{Research Outline}
+\begin{frame}{Outline}\frametitle{Table of contents}\tableofcontents
+\end{frame} 
+
+\begin{frame}\frametitle{Research Question, Method, and Finding}
+\begin{itemize}
+\item Research Questions: 
+\begin{enumerate}
+\item Previous studies of public opinion on immigration focus on economically developed countries and implicitly refer immigrants to blue-collar laborers.  
+\item The implicit presumption of immigrants as blue-collar workers is highly unreasonable since international migration involves not only blue-collar workers but also white-collar ones. 
+\item We extend the discussion to Taiwan and investigate public attitudes toward immigrants with different occupations.
+\end{enumerate}
+\item Method: Bayesian bivariate ordered probit model (BOPM)
+\item Findings:
+\begin{enumerate}
+\item Different economic factors are the source of different attitudes toward immigrants
+\item Cultural tolerance is consistently correlated to pro-immigration attitudes regardless of professions.
+\end{enumerate}
+\end{itemize}
+\end{frame}
+\section{Theory}
+\begin{frame}{Immigration Attitude}
+\begin{enumerate} 
+\item Economic: individual workers will oppose immigration of workers with similar skills to their own due to the fear of competing for material resources (Mayda, 2006; Scheve and Slaughter, 2001)
+\item Culture: social impact of immigration on cultural homogeneity (Card, Dustmann and Preston, 2012; Citrin and Sides, 2008)
+\item Symbolic: native people will be against immigration because of symbolic prejudice toward specific immigrant groups (Lee and Fiske, 2006)
+\item Threat: the perceived intergroup threat on cultural unity and/or national identity  (Blumer, 1958; Burns and Gimpel, 2000; Quillian, 1995)
+\end{enumerate}
+\end{frame}
+\begin{frame}{Critics}
+Two approaches:
+\begin{itemize}
+\item Economic: material self-interest, social welfare
+\item Socio-tropic: culture threats of out-group
+\end{itemize}
+\begin{enumerate}
+\item Much of the literature does not consider the differences of skill levels among immigrants and presumes the referred immigrants are low-skilled, blue-collar workers. 
+\item The differentiation between skill levels of immigrants is appropriate to test alternative theoretical arguments that explain the sources of negative sentiments toward immigration (Hainmueller and Hiscox, 2007).
+\end{enumerate}
+ \end{frame}
+\begin{frame}{Hypotheses}
+\begin{enumerate}
+\item $\text{H}_{1}$: Native workers oppose immigrants while native professional oppose skilled immigrants.
+\item $\text{H}_{2}$: Natives with higher incomes are more supportive of immigrant professionals.
+\item $\text{H}_{3}$: Cultural unity has negative impact on immigration.
+\end{enumerate}
+ \end{frame}
+ 
+
+\begin{frame}{Why Taiwan?}
+\begin{itemize} 
+\item In Taiwan, public perceptions of citizenship are strongly linked to ethnicity; an immigrant can be easily recognized by their appearance.  Taiwan has strict immigration regulations, by which immigrants hardly get residency and citizenship. 
+\item There are three types of migration in Taiwan: marriage migration, immigrant laborers, and white-collar foreign professionals. Foreigners in Taiwan can apply for citizenship or permanent residency if they marry to Taiwanese. Otherwise, only managers, investors, and professionals can apply for permanent residency.
+\item Taiwan government well managed migrant workers and is targeting at more foreign professionals.
+\item Taiwan is a good case for the society that wants to be more inclusive and diverse.
+\end{itemize}
+ \end{frame}
+
+ 
+\section{Statistical Model}
+\begin{frame}{Bivariate Ordered Probit Model  (1)}
+\begin{itemize}
+\item A bivariate ordered probit model (BOPM) is applied to analyzing the survey data with the correlation between two ordered response variables (Greene and Hensher, 2010:227). 
+\item Suppose that, for the two response variables $y_{i,1}$ and $y_{i,2}$, respondent $i=1,\cdots,N$ provides a set of response ($y_{i,1}=j, y_{i,2}=k$) for $j=1,2,\cdots,J$ and $k=1,2,\cdots,K$ based on unobserved, latent traits $y_{i,1}^{*}$ and $y_{i,2}^{*}$ and threshold parameters $\tau_{1,j}$ and $\tau_{2, k}$. The two latent variables can be represented by:
+\begin{empheq}[left={\empheqlbrace}]{align}
+    y_{i,1}^{*} &= \bm{x}'\bm{\beta}+\varepsilon_{i,1}  \label{positive}\\
+    y_{i,2}^{*} &= \bm{z}'\bm{\gamma}+\varepsilon_{i,2},  \label{negative}
+\end{empheq}
+\end{itemize}
+ \end{frame}
+\begin{frame}{Bivariate Ordered Probit Model  (2)}
+\begin{itemize} 
+\item $\bm{x}=(x_{i,1}, x_{i,2}, \cdots, x_{i,M})$ and $\bm{z}=(z_{i,1}, z_{i,2}, \cdots, z_{i,G})$ are $M$-variate and $G$-variate predictors, respectively, $\bm{\beta}\in \mathbb{R}^{M}$ and $\bm{\gamma}\in \mathbb{R}^{G}$ are corresponding unknown parameter vectors, and $\bm{\varepsilon_{i}}=(\varepsilon_{i,1}, \varepsilon_{i,2})$ is the error term. The predictors in $\bm{x}$ and $\bm{z}$ can be the same or different (Greene, 2012). Given $y_{i,1}^{*}$, $y_{i,2}^{*}$, $\tau_{1,j}$, and $\tau_{2, k}$, we observe the responses as follows:
+\begin{empheq}[left={\empheqlbrace}]{align}
+    y_{i,1} &= j \text{ if } \tau_{1,j-1} < y_{i,1}^{*} \leq \tau_{1,j}   \\
+    y_{i,2} &= k \text{ if } \tau_{2,k-1} < y_{i,2}^{*} \leq \tau_{2,k} 
+\end{empheq}
+where it is assumed that $\tau_{1,0}=\tau_{2,0}=-\infty$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Bivariate Ordered Probit Model  (3)}
+\begin{itemize}
+\item To relax the assumption that the two latent variables are independent, the error term $\bm{\varepsilon_{i}}$ is assumed to follow a bivariate standard normal distribution as follows:
+
+\begin{align}
+  \bpm \varepsilon_{i,1} \\ \varepsilon_{i,2}  \epm \sim \text{N}_{2} \left[ \bpm 0 \\ 0  \epm, \bpm 1 & \rho \\ \rho & 1 \epm \right].
+\end{align} 
+\item The correlation parameter $\rho$ captures the association between the two response variables.
+\end{itemize}
+\end{frame}
+
+ \section{Data and Variables} %Data and Variables
+ \begin{frame}{Data}
+\begin{itemize}
+\item Data: a nationally representative sample of 1966 respondents conducted by the Taiwan Social Change Survey Project.  They were collected by face-to-face interview from August 7th to November 27th in 2016, which is a part of the seventh round of Taiwan Social Change Survey Project from 2015 to 2019. The theme of the survey in 2016 is \emph{Citizens and State}. 
+\end{itemize}
+\end{frame}
+ \begin{frame}{Dependent Variables}
+\begin{itemize}
+\item Dependent Variables: 
+\begin{itemize}
+\item [$\blacksquare$]Do you think the Taiwan government should or should not  allow foreign professionals to become citizens of Taiwan, with the same 
+rights and obligations (such as voting rights and paying taxes) as we have? (Professionals being citizens)    
+\item [$\blacksquare$]Do you think the Taiwan government should or should not 
+ allow migrant laborers and care workers to become citizens 
+ of Taiwan, with the same rights and obligations (such as voting 
+rights and paying taxes) as we have? (Workers being citizens)  
+\end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Independent Variables}
+\begin{table}[ht!]
+\footnotesize
+\scripsize
+%\vspace{20pt}
+\begin{center}
+  \begin{threeparttable}
+\caption*{Table A1: Independent Variables: }
+%\label{table1}
+\begin{tabular}{l} 
+\toprule
+\midrule
+Do you think the Taiwan government should or should not actively encourage   \\
+\qquad Taiwanese to marry foreigners and live in Taiwan? (Transnational marriage)   \\
+How successful do you think the government in Taiwan deals with problems   \\
+\qquad  regarding foreign laborers (Solving problems) \\
+National economic condition \\
+Household economic condition \\
+Social status: 0-10\\
+Unemployment: 1=unemployed \\
+Occupation\\
+Education \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+  \item \footnotesize{Data source: 2016 Taiwan Social Change Survey (Round 7, Year 2): Citizens and State.}
+\end{tablenotes}
+  \end{threeparttable}
+\end{center}
+\end{table} 
+\end{frame}
+
+
+\section{Descriptive Analysis}
+\begin{frame}{Attitudes toward Two Types of Immigrants}
+\begin{table}[ht!]
+\scriptsize
+%\vspace{20pt}
+\begin{center}
+  \begin{threeparttable}
+\caption{Cross-tabulation of Attitudes toward Two Types of Immigrants}
+\label{table3}
+\newcolumntype{W}{D{.}{.}{9}}
+\begin{tabular}{lWWWW} 
+\toprule
+\multicolumn{1}{l}{Allow foreign professionals} &  \multicolumn{4}{c}{Allow foreign workers to become citizens}     \\
+\multicolumn{1}{l}{to become citizens} &  \multicolumn{1}{l}{Definitely not} & \multicolumn{1}{l}{Probably not} & \multicolumn{1}{l}{Probably} & \multicolumn{1}{l}{Definitely}     \\
+\midrule 
+Definitely not  & 80.18 (89) & 11.71 (13) & 6.31 (7) & 1.80 (2)    \\
+Probably not  & 20.72 (46) & 65.77 (146) & 11.26 (25) & 2.25 (5)   \\
+Probably & 13.12 (108) & 33.78 (278) & 49.70 (409) & 3.40 (28)     \\
+Definitely & 13.39 (90) & 20.39 (137) & 28.27 (190) & 37.95 (255)     \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item \footnotesize{Note: Spearman's rank correlation coefficient is 0.45 and polychoric correlation is 0.54.}
+\end{tablenotes}
+  \end{threeparttable}
+\end{center}
+\end{table} 
+\end{frame}
+\begin{frame}{Occupations and Immigration}
+\begin{table}[ht!]
+\scriptsize
+%\vspace{20pt}
+\begin{center}
+%  \begin{threeparttable}
+\caption{Cross-tabulation of Occupations and Attitudes toward Immigration}
+\label{table4}
+\newcolumntype{W}{D{.}{.}{9}}
+\begin{tabular}{lWWWW} 
+\toprule
+\multicolumn{1}{l}{} &  \multicolumn{4}{c}{Allow foreign professionals to become the citizens}     \\
+\multicolumn{1}{l}{Occupations} &  \multicolumn{1}{l}{Definitely not} & \multicolumn{1}{l}{Probably not} & \multicolumn{1}{l}{Probably} & \multicolumn{1}{l}{Definitely}     \\
+\midrule 
+Professionals  & 3.24 (19) & 7.51 (44) & 44.37 (260) & 44.88 (263)    \\
+Skilled-workers  & 5.88 (42) & 14.15 (101) & 46.08 (329) & 33.89 (242)   \\
+Low-skilled workers & 9.87 (47) & 13.24 (63) & 43.49 (207) & 33.40 (159)     \\
+Armed forces & 0.00 (0) & 16.67 (4) & 33.33 (8) & 50.00 (12)     \\
+\midrule 
+\midrule 
+\multicolumn{1}{l}{} &  \multicolumn{4}{c}{Allow foreign workers to become the citizens}     \\
+\multicolumn{1}{l}{Occupations} &  \multicolumn{1}{l}{Definitely not} & \multicolumn{1}{l}{Probably not} & \multicolumn{1}{l}{Probably} & \multicolumn{1}{l}{Definitely}     \\
+\midrule 
+Professionals  & 13.45 (78) & 30.17 (175) & 38.10 (221) & 18.28 (106)    \\
+Skilled-workers  & 18.77 (137) & 33.56 (245) & 33.15 (242) & 14.52 (106)   \\
+Low-skilled workers & 23.67 (116) & 30.20 (148) & 31.22 (153) & 14.90 (73)     \\
+Armed forces & 9.09 (2) & 22.73 (5) & 54.55 (12) & 13.64 (3)     \\
+\bottomrule
+\end{tabular}
+%\begin{tablenotes}
+%\item \footnotesize{Note: Data are weighted to reflect the characteristics of the national population; row percentages are presented and frequencies are in the parentheses; 166 and 144 samples are missing, respectively.}
+%\end{tablenotes}
+ % \end{threeparttable}
+\end{center}
+\end{table} 
+\end{frame}
+\begin{frame}{Income and Immigration}
+\begin{table}[ht!]
+\scriptsize
+%\vspace{-10pt}
+\begin{center}
+\caption{Cross-tabulation of Income and Attitudes toward Immigration}
+\label{table5}
+\newcolumntype{W}{D{.}{.}{9}}
+\begin{tabular}{lWWWW} 
+\toprule
+\multicolumn{1}{l}{Income} &  \multicolumn{4}{c}{Allow foreign professionals to become the citizens}     \\
+\multicolumn{1}{l}{(US dollar)} &  \multicolumn{1}{l}{Definitely not} & \multicolumn{1}{l}{Probably not} & \multicolumn{1}{l}{Probably} & \multicolumn{1}{l}{Definitely}     \\
+\midrule 
+1000 and below  & 7.65 (72) & 15.94 (150) & 45.48 (428) & 30.92 (291)    \\
+1000-2000  & 4.40 (27) & 9.14 (56) & 46.49 (285) & 39.97 (245)   \\
+2000-3000 & 0.78 (1) & 3.12 (4) & 42.97 (55) & 53.12 (68)     \\
+3000-4000 & 0.00 (0) & 4.17 (2) & 45.83 (22) & 50.00 (24)     \\
+4000 and above & 6.06 (2) & 0.00 (0) & 33.33 (11) & 60.61 (20)     \\
+\midrule 
+\midrule 
+\multicolumn{1}{l}{Income} &  \multicolumn{4}{c}{Allow foreign workers to become the citizens}     \\
+\multicolumn{1}{l}{(US dollar)} &  \multicolumn{1}{l}{Definitely not} & \multicolumn{1}{l}{Probably not} & \multicolumn{1}{l}{Probably} & \multicolumn{1}{l}{Definitely}     \\
+\midrule 
+1000 and below  & 20.68 (200) & 32.26 (312) & 33.30 (322) & 13.75 (133)    \\
+1000-2000  & 14.78 (90) & 33.17 (202) & 34.98 (213) & 17.08 (104)   \\
+2000-3000 & 11.72 (15) & 26.56 (34) & 39.06 (50) & 22.66 (29)     \\
+3000-4000 & 10.64 (5) & 27.66 (13) & 44.68 (21) & 17.02 (8)     \\
+4000 and above & 21.21 (7) & 18.18 (6) & 39.39 (13) & 21.21 (7)     \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table} 
+\end{frame}
+
+\begin{frame}{Transnational Marriage and Immigration}
+\begin{table}[ht!]
+\scriptsize
+%\vspace{20pt}
+\begin{center}
+ % \begin{threeparttable}
+\caption{Cross-tabulation of Attitudes toward Transnational Marriage and Immigration}
+\label{table6}
+\newcolumntype{W}{D{.}{.}{9}}
+\begin{tabular}{lWWWW} 
+\toprule
+\multicolumn{1}{l}{Transnational} &  \multicolumn{4}{c}{Allow foreign professionals to become the citizens}     \\
+\multicolumn{1}{l}{marriage} &  \multicolumn{1}{l}{Definitely not} & \multicolumn{1}{l}{Probably not} & \multicolumn{1}{l}{Probably} & \multicolumn{1}{l}{Definitely}     \\
+\midrule 
+Definitely not  & 30.56 (44) & 12.50 (18) & 22.92 (33) & 34.03 (49)    \\
+Probably not  & 5.39 (32) & 20.37 (121) & 48.15 (286) & 26.09 (155)   \\
+Probably & 2.27 (17) & 8.13 (61) & 55.87 (419) & 33.73 (253)     \\
+Definitely & 4.14 (11) & 4.51 (12) & 17.67 (47) & 73.68 (196)     \\
+\midrule 
+\midrule 
+\multicolumn{1}{l}{Transnational} &  \multicolumn{4}{c}{Allow foreign workers to become the citizens}     \\
+\multicolumn{1}{l}{marriage} &  \multicolumn{1}{l}{Definitely not} & \multicolumn{1}{l}{Probably not} & \multicolumn{1}{l}{Probably} & \multicolumn{1}{l}{Definitely}     \\
+\midrule 
+Definitely not  & 52.45 (75) & 17.48 (25) & 14.69 (21) & 15.38 (22)    \\
+Probably not  & 18.30 (110) & 42.26 (254) & 29.12 (175) & 10.32 (62)   \\
+Probably & 12.70 (96) & 28.97 (219) & 45.37 (343) & 12.96 (98)     \\
+Definitely & 15.71 (41) & 22.22 (58) & 25.67 (67) & 36.40 (95)     \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table} 
+\end{frame}
+
+ \section{Findings}
+\begin{center}
+%\vspace{10pt}
+\begingroup
+\renewcommand\arraystretch{0.68}
+{\tiny
+\begin{longtable}{l | cc}
+\caption{Determinants of Public Attitudes in 2016}  \\
+\hline
+ &  \multicolumn{2}{c}{Attitudes toward}    \\
+Explanatory Variable & Professionals  & Workers   \\
+\hline
+\endfirsthead
+\multicolumn{3}{c}%
+{\small{\tablename\ \thetable: Determinants of Public Attitudes in 2016 (Continued)}} \\
+\hline
+Outcome Variable &  \multicolumn{2}{c}{Attitudes toward}     \\
+ & Professionals  & Workers   \\
+\hline
+\endhead
+\hline \multicolumn{3}{r}{} \\
+\endfoot
+\hline
+\hline \multicolumn{3}{l}{Data source: 2016 Taiwan Social Change Survey (Round 7, Year 2)} \\
+          \multicolumn{3}{l}{Note: $90\%$ HPD intervals are presented.} \\
+\endlastfoot
+\textbf{Occupation} (Military=0)  &               &            \\ 
+Professionals         & $-0.002$        & 0.134              \\
+                       & $[-0.466, 0.483]$   & $[-0.397, 0.593]$       \\
+Skilled Worker       & $-0.202$        & $-0.068$              \\
+                     & $[-0.633, 0.223]$   & $[-0.571, 0.396]$       \\
+Low-skilled Worker    & $-0.103$        & $-0.075$              \\
+                     & $[-0.516, 0.338]$   & $[-0.593, 0.406]$       \\
+\textbf{Country Eco.} (Same=0)   &               &            \\
+Better         & $0.059$                & $0.326$               \\
+            & $[-0.230, 0.342]$   & $[0.060, 0.585]$     \\
+Worse   & 0.076                & $0.044$                  \\
+           & $[-0.074, 0.221]$   & $[-0.091, 0.187]$    \\
+\textbf{Household Eco.} (Same=0)   &               &            \\
+Better         & $-0.116$                & $0.030$               \\
+            & $[-0.329, 0.124]$   & $[-0.195, 0.251]$     \\
+\textcolor{red}{Worse}   & $-0.085$                & \textcolor{red}{$-0.238$ }                 \\
+           & $[-0.252, 0.096]$   & $[-0.402, -0.071]$    \\
+\textcolor{red}{\textbf{Income}} (below US\$1000=0)   &               &            \\
+1000-2000         & $0.290$                & $0.072$               \\
+            & $[0.111, 0.466]$   & $[-0.090, 0.243]$     \\
+2000-3000         & $0.747$                & $0.333$               \\
+            & $[0.431, 1.038]$   & $[0.047, 0.615]$     \\
+3000-4000         & $0.713$                & $0.343$               \\
+            & $[0.263, 1.137]$   & $[-0.094, 0.742]$     \\
+above 4000         & $0.830$                & $0.206$               \\
+            & $[0.288, 1.352]$   & $[-0.274, 0.719]$     \\
+\textcolor{red}{\textbf{Tolerance}}      & $0.783$                & 0.588         \\
+         & $[0.645, 0.928]$   & $[0.449, 0.730]$    \\ 
+\textcolor{red}{\textbf{Social Status}}      & \textcolor{red}{$-0.070$}                & 0.007         \\
+         & $[-0.117, -0.031]$   & $[-0.033, 0.047]$    \\ 
+\textbf{Unemployment}      & $0.171$                & $-0.031$         \\
+         & $[0.011, 0.344]$   & $[-0.189, 0.128]$    \\ 
+\textbf{Education} (Illiteracy=0)       &               &           \\
+Junior high     & $-0.025$                & $0.149$           \\
+           & $[-16.681, 16.450]$   & $[-15.857, 16.463]$    \\  
+Senior high     & $0.018$                & 0.115          \\
+           & $[-16.449, 16.331]$   & $[-16.612, 16.028]$      \\  
+College          & $-0.069$                & $-0.037$         \\
+           & $[-16.114, 16.662]$   & $[-16.650, 15.903]$    \\  
+University and above  & $0.008$        & $0.011$         \\
+          & $[-17.360, 15.244]$   & $[-16.748, 16.324]$    \\  
+\textbf{Solving Problems} (Unsuccessful=0)   &               &            \\
+Neither         & ---                & $-0.239$               \\
+            & ---   & $[-0.438, -0.048]$     \\
+Successful   & ---                & $-0.195$                  \\
+           & ---   & $[-0.315, -0.061]$    \\
+\hline
+\textbf{Cutpoint 1}  & $-2.356$                & $-1.131$          \\
+          & $[-2.865, -1.808]$   & $[-1.657, -0.667]$       \\
+\textbf{Cutpoint 2}  & $-1.272$                & 0.164          \\
+          & $[-1.744, -0.718]$   & $[-0.354, 0.630]$       \\
+\textbf{Cutpoint 3}  & $0.603$                & 1.715          \\
+          & $[0.121, 1.148]$   & $[1.187, 2.187]$       \\
+\hline
+\bm{$\rho$}           & \multicolumn{2}{c}{0.957}              \\
+                      & \multicolumn{2}{c}{[0.915, 0.997]} 
+\label{table6}
+\end{longtable}
+}
+\endgroup
+\end{center}
+
+\section{Summary and Conclusion}
+\begin{frame}{Summary}
+\begin{enumerate}
+\item People with higher incomes are more likely to allow foreign professionals. 
+\item People with positive assessment of national economy are more likely to allow granting citizenship to foreign laborers while those with negative assessment of household economy are less likely to allow granting citizenship to foreign laborers. 
+\item Natives with greater cultural tolerance are more willing to grant citizenship to foreign professionals and foreign laborers. 
+\item People who think that the government do not fail to deal with problems regarding foreign laborers are less likely to support the inflow of immigrant workers.
+\end{enumerate}
+\end{frame}
+\begin{frame}{Conclusion}
+\begin{enumerate}
+\item We contribute to our understanding of how natives view immigrants across occupations in Taiwan, a economically developing and mono-ethnic country. Both economic and cultural factors are related to public attitudes toward immigration but in a different way. 
+\item  We develop  the Bayesian bivariate ordered probit model that considers the positive correlation between the two response variables. The explicit modeling of the association between the two response variables potentially reflects DGP, which in turn possibly leads to more correct inferences.
+\item Next step: Estimating the model with two ordinal variables that have different number of categories.
+\end{enumerate}
+\end{frame}
+\end{document}
